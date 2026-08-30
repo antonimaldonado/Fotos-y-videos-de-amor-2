@@ -1,0 +1,426 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+
+#videoFondo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80vw;
+    height: 90vh;
+
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+#scene {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 1;
+}
+@media (max-width: 600px) {
+
+    #scene {
+        width: 100vw;
+        height: 100vh;
+    }
+
+}
+/* ================================= */
+/* COLUMNAS DE IMÁGENES */
+/* ================================= */
+
+.columna {
+    position: fixed;
+    top: 0;
+
+    width: 10vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+/* IZQUIERDA */
+.izquierda {
+    left: 0;
+}
+
+/* DERECHA */
+.derecha {
+    right: 0;
+}
+
+
+/* CONTENEDOR DE LAS IMÁGENES */
+
+.imagenes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    position: absolute;
+    width: 100%;
+}
+
+
+.imagenes img {
+    width: 10vw;
+    height: 10vw;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.izquierda .imagenes {
+    animation: bajarImagenes 18s linear infinite;
+}
+
+.derecha .imagenes {
+    animation: subirImagenes 18s linear infinite;
+}
+
+
+@keyframes bajarImagenes {
+    from {
+        transform: translateY(-50%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes subirImagenes {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
+/* ========================================= */
+/* CONTROLES DE MÚSICA */
+/* ========================================= */
+
+#controlesMusica {
+    position: fixed;
+
+    left: 50%;
+    top: calc(50% + 350px);
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+/* ========================================= */
+/* BOTÓN PRINCIPAL */
+/* ========================================= */
+
+.botonPrincipal {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 13px 25px;
+
+    min-width: 170px;
+
+    border: 2px solid rgba(243, 219, 101, 0.8);
+
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: rgb(243, 219, 101);
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+
+    box-shadow:
+        0 0 8px rgba(243, 219, 101, 0.4),
+        0 0 20px rgba(243, 219, 101, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ========================================= */
+/* BOTONES ANTERIOR / SIGUIENTE */
+/* ========================================= */
+
+.botonControl {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(243, 219, 101, 0.7);
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: rgb(243, 219, 101);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+
+    box-shadow:
+        0 0 8px rgba(243, 219, 101, 0.4);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ========================================= */
+/* EFECTO AL PASAR EL MOUSE */
+/* ========================================= */
+
+.botonPrincipal:hover,
+.botonControl:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 12px rgba(243, 219, 101, 0.7),
+        0 0 25px rgba(243, 219, 101, 0.3);
+}
+
+
+/* ========================================= */
+/* EFECTO AL PRESIONAR */
+/* ========================================= */
+
+.botonPrincipal:active,
+.botonControl:active {
+
+    transform: scale(0.92);
+}
+
+
+/* Icono */
+
+#iconoMusica {
+    font-size: 17px;
+}
+
+
+/* ========================================= */
+/* CONTENEDOR DE LAS NOTAS */
+/* ========================================= */
+
+#notasMusicales {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+    height: 1px;
+
+    pointer-events: none;
+}
+
+
+/* ========================================= */
+/* NOTAS MUSICALES */
+/* ========================================= */
+
+.nota {
+    position: absolute;
+
+    color: rgb(243, 219, 101);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 5px rgba(243, 219, 101, 0.9),
+        0 0 12px rgba(243, 219, 101, 0.5);
+
+    animation: notaMusical 1s ease-out forwards;
+}
+
+
+/* ========================================= */
+/* ANIMACIÓN DE LAS NOTAS */
+/* ========================================= */
+
+@keyframes notaMusical {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(0.5)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(var(--x), var(--y))
+            scale(1.2)
+            rotate(var(--rotacion));
+    }
+}
+/* ========================================= */
+/* VISOR DE IMÁGENES */
+/* ========================================= */
+
+#visorImagen {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 100;
+    
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* Imagen ampliada */
+
+#imagenGrande {
+    width: 70vw;
+    height: 70vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.25),
+        0 0 50px rgba(243, 219, 101, 0.2);
+
+    cursor: default;
+
+    animation: aparecerImagen 0.3s ease;
+}
+
+
+/* Animación cuando aparece */
+
+@keyframes aparecerImagen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+/* ================================= */
+/* CELULARES */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    #videoFondo {
+        width: 100vw;
+        height: 100vh;
+
+        object-fit: cover;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .columna {
+        width: 16vw;
+    }
+
+    .imagenes img {
+        width: 16vw;
+        height: 16vw;
+    }
+
+}
+@media (max-width: 600px) {
+
+    #controlesMusica {
+        top: calc(50% + 250px);
+    }
+
+    .botonPrincipal {
+        min-width: 140px;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .botonControl {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+}

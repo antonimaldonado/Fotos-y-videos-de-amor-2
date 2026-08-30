@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I love you &lt;3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <video id="videoFondo" autoplay muted loop playsinline>
+    <source src="videos/WhatsApp Video 2026-08-26 at 6.54.48 PM.mp4" type="video/mp4">
+</video>
+
+<div class="columna izquierda">
+    <div class="imagenes">
+        <img src="imgs/6b49a42a-e6aa-4f8d-a2ef-5ca7b8a58e9c.jpg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.37 PM (1).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.37 PM (2).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.37 PM.jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.38 PM (1).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.38 PM (2).jpeg">
+
+        <img src="imgs/6b49a42a-e6aa-4f8d-a2ef-5ca7b8a58e9c.jpg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.38 PM (3).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.38 PM.jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.34.19 PM (1).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.34.19 PM (2).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.34.19 PM (3).jpeg">
+    </div>
+</div>
+
+<div class="columna derecha">
+    <div class="imagenes">
+     <img src="imgs/6b49a42a-e6aa-4f8d-a2ef-5ca7b8a58e9c.jpg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.34.19 PM (4).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.34.19 PM.jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.37 PM.jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.38 PM (1).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.38 PM (2).jpeg">
+
+        <img src="imgs/6b49a42a-e6aa-4f8d-a2ef-5ca7b8a58e9c.jpg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.38 PM (3).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.29.38 PM.jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.34.19 PM (1).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.34.19 PM (2).jpeg">
+        <img src="imgs/WhatsApp Image 2026-08-28 at 7.34.20 PM (1).jpeg">
+    </div>
+</div>
+
+<canvas id="scene" width="1900" height="1000"></canvas>
+<div id="controlesMusica">
+
+    <button id="botonAnterior" class="botonControl">
+        ⏮
+    </button>
+
+    <button id="botonMusica" class="botonPrincipal">
+        <span id="iconoMusica">▶</span>
+        <span id="textoMusica">Iniciar música</span>
+    </button>
+
+    <button id="botonSiguiente" class="botonControl">
+        ⏭
+    </button>
+
+    <div id="notasMusicales"></div>
+
+</div>
+<audio id="musica" preload="auto"></audio>
+
+
+<div id="visorImagen">
+    <img id="imagenGrande" src="" alt="Imagen ampliada">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
